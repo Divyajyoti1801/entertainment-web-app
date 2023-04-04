@@ -1,0 +1,58 @@
+
+//Color Variables
+$color-orange:#FC4747;
+$color-dark-blue:#10141E;
+$color-grayish-blue:#5A698F;
+$color-semi-dark-blue:#161D2F;
+$color-white:#FFF;
+
+//Typography
+$font-heading-L:3.2rem;
+$font-heading-M-S:2.4rem;
+$font-heading-XS:1.8rem;
+$font-body-M:1.5rem;
+$font-body-S:1.3rem;
+$font-weight-heading-L-M:300;
+$font-weight-heading-S-XS:500;
+$font-weight-body-M-S:300;
+
+//Standard
+$border-radius:8px;
+$padding-LR:3.2rem;
+
+//Breakpoints:
+$bp-tablet:48em;
+$bp-mobile: 23.4375em;
+
+
+//CTA
+@mixin cta{
+    font-size: $font-body-M;
+    font-weight: $font-weight-body-M-S;
+    background: $color-orange;
+    color:$color-white;
+    height: 4.8rem;
+    width: 33.6rem;
+    border: none;
+    border-radius: $border-radius;
+}
+
+@mixin cta-hover{
+    color:$color-semi-dark-blue;
+    background: $color-white;
+}
+
+//Flex Mixin
+@mixin flex($dir,$just,$align){
+    display: flex;
+    flex-direction: $dir;
+    align-items: $align;
+    justify-content: $just;
+}
+
+//BreakPoint Mixin 
+@mixin breakpoint($bp){
+    @media only screen and (max-width:$bp){
+        @content;
+    }
+}

@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+
+.rootPage{
+    padding: $padding-LR;
+    @include flex(row,space-between,center);
+    
+    @include breakpoint($bp-tablet){
+        flex-direction: column;
+    }
+
+    .header{
+        background:$color-semi-dark-blue;
+        @include flex(column,space-between,center);
+        @include breakpoint($bp-tablet){
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            padding: 2rem;
+        }
+        @include breakpoint($bp-tablet){
+            padding: 2rem;
+        }
+        height: 90vh;
+        padding: 3.2rem;
+        border-radius:$border-radius;
+        &__logo{
+            height: auto;
+        }
+        
+        &__menu{
+            @include flex(column,center,center);
+            @include breakpoint($bp-tablet){
+                flex-direction: row;
+            }
+            &--item{
+                &:not(:last-child){
+                    margin-bottom: 4rem;
+                    @include breakpoint($bp-tablet){
+                        margin-bottom: 0;
+                        margin-right: 3.2rem;
+                    }
+                }
+            }
+        }
+
+        &__profile{
+            &--png{
+                width: 3.8rem;
+                height: 3.8rem;
+                border-radius: 100%;
+                border: 2px solid $color-white;
+            }
+        }
+    }
+}
