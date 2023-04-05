@@ -2,7 +2,7 @@
 
 .rootPage{
     padding: $padding-LR;
-    @include flex(row,space-between,center);
+    @include flex(row,flex-start,flex-start);
     
     @include breakpoint($bp-tablet){
         flex-direction: column;

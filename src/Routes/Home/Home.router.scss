@@ -1,1 +1,34 @@
 @import '../../styles/variables';
+
+.home{
+    width: 100%;
+    height: auto;
+    margin-left: 3.6rem;
+    @include flex(column,flex-start,flex-start);
+    @include breakpoint($bp-tablet){
+        margin-left: 0;
+        margin-top: 3.2rem;
+    }
+    
+    &__search{
+        width: 100%;
+        @include flex(row,flex-start,center);
+        &--input{
+            padding: 1.8rem 0;
+            width: 100%;
+            margin-left:2.4rem ;
+            background: transparent;
+            border: none;
+            color:$color-white;
+            font-size: $font-heading-M-S;
+            font-weight: $font-weight-heading-L-M;
+            border-bottom: 2px solid transparent;
+
+            &:focus{
+                outline: none;
+                border-bottom-color: $color-grayish-blue;
+            }
+        }
+
+    }
+}
