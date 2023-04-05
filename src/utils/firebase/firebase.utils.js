@@ -10,7 +10,7 @@ import {
 import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: "AIzaSyDj4xfDFMddR5H_tPiKdh1csNdcebO_ZWg",
   authDomain: "entertainment-web-app-d25f7.firebaseapp.com",
   projectId: "entertainment-web-app-d25f7",
   storageBucket: "entertainment-web-app-d25f7.appspot.com",
@@ -35,11 +35,10 @@ export const createUserDocumentFromAuth = async (
   const userDocRef = doc(db, "users", userAuth.uid);
   const userSnapshot = await getDoc(userDocRef);
   if (!userSnapshot.exists()) {
-    const { displayName, email } = userAuth;
+    const { email } = userAuth;
     const createAt = new Date();
     try {
       await setDoc(userDocRef, {
-        displayName,
         email,
         createAt,
         ...additionalInformation,
@@ -67,3 +66,7 @@ export const signInWithAuthUserWithEmailAndPassword = (email, password) => {
 
 //Export Const SignOut
 export const signOutUser = async () => await signOut(auth);
+
+//OnAuthStateChangedListener
+export const OnAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);

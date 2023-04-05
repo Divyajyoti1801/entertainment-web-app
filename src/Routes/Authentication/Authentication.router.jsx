@@ -7,7 +7,7 @@ const Authentication = () => {
   return (
     <Routes>
       <Route index path="/" element={<SignIn />} />
-      <Route index path="/sign-out" element={<SignUp />} />
+      <Route index path="/sign-up" element={<SignUp />} />
     </Routes>
   );
 };

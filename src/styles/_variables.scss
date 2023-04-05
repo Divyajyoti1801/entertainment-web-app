@@ -7,6 +7,7 @@ $color-semi-dark-blue:#161D2F;
 $color-white:#FFF;
 
 //Typography
+$font-family: 'Outfit', sans-serif;
 $font-heading-L:3.2rem;
 $font-heading-M-S:2.4rem;
 $font-heading-XS:1.8rem;
@@ -19,6 +20,7 @@ $font-weight-body-M-S:300;
 //Standard
 $border-radius:8px;
 $padding-LR:3.2rem;
+$transition: all .25s ease;
 
 //Breakpoints:
 $bp-tablet:48em;
@@ -35,6 +37,8 @@ $bp-mobile: 23.4375em;
     width: 33.6rem;
     border: none;
     border-radius: $border-radius;
+    transition: $transition;
+    cursor: pointer;
 }
 
 @mixin cta-hover{

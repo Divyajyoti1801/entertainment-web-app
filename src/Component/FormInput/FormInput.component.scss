@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.formInput{
+    width: 100%;
+    position: relative;
+    &__input{
+        width: 100%;
+        padding: 1.6rem;
+        background: transparent;
+        outline: none;
+        color:$color-white;
+        font-size: $font-body-M;
+        font-weight: $font-weight-body-M-S;
+        border: none;
+        border-bottom: 1px solid $color-grayish-blue;
+
+        &::placeholder{
+            color:$color-grayish-blue;
+            font-family: $font-family;
+            font-weight: $font-weight-body-M-S;
+        }
+    }
+}

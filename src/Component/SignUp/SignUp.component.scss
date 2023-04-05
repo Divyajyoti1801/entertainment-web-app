@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+
+.form{
+    width: 100%;
+    height: 100vh;
+    @include flex(column,center,center);
+
+    &__logo{
+        margin-bottom: 9rem;
+    }
+    
+    .sign-up{
+        padding: 3.2rem;
+        background: $color-semi-dark-blue;
+        border-radius: $border-radius;
+
+        &__heading{
+            font-size: $font-heading-L;
+            font-weight: $font-weight-heading-S-XS;
+            margin-bottom: 4rem;
+        }
+
+
+
+        &__btn{
+            margin-top: 4rem;
+            @include cta;
+            &:hover,&:active{
+                @include cta-hover;
+            }
+        }
+        
+        &__prompt{
+            margin-top:3.2rem;
+            width: 100%;
+            text-align: center;
+            font-size: $font-body-M;
+            font-weight: $font-weight-body-M-S;
+            &--link{
+                color:$color-orange;
+                font-size: $font-body-M;
+                font-weight: $font-weight-body-M-S;
+            }
+        }
+    }
+}
