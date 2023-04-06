@@ -1,0 +1,30 @@
+@import '../../styles/variables';
+
+.trending-card{
+    scroll-snap-align: start;
+    width: 47rem;
+    height: 23rem;
+    padding: 2.4rem;
+    border-radius:$border-radius;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flex(column,space-between,center);
+
+    &__bookmark{
+        width: 100%;
+        @include flex(row,flex-end,center);
+        
+        &--img{
+            height: 4rem;
+            width: 4rem;
+            background: $color-grayish-blue;
+            @include flex(row,center,center);
+            border-radius: 100%;
+        }
+    }
+    
+    &__details{
+        width: 100%;
+        @include flex(column,flex-start,flex-start);
+    }
+}

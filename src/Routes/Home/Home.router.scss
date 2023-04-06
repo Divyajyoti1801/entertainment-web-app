@@ -12,6 +12,7 @@
     
     &__search{
         width: 100%;
+        margin-bottom: 4rem;
         @include flex(row,flex-start,center);
         &--input{
             padding: 1.8rem 0;
@@ -30,5 +31,17 @@
             }
         }
 
+    }
+
+    &__recommendation{
+        margin-top: 4rem;
+        width: 100%;
+        @include flex(row,center,center);
+        &--content{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 4rem;
+        }
     }
 }

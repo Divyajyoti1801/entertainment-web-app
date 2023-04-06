@@ -1,0 +1,37 @@
+@import '../../styles/variables';
+
+.cards{
+    @include flex(column,flex-start,flex-start);
+    border-radius:$border-radius;
+    &__banner{
+        position: relative;
+        &--img{
+            width: 100%;
+            height: 17.4rem;
+            border-radius: $border-radius;
+        }
+        &--icon{
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 100%;
+            top:0;
+            right: 0;
+            transform: translate(-20%,20%);
+            background: $color-grayish-blue;
+            @include flex(row,center,center);
+        }
+    }
+    &__details{
+        @include flex(column,flex-start,flex-start);
+        width:100%;
+        &--title{
+            font-size: $font-body-S;
+            font-weight: $font-weight-body-M-S;
+        }
+        &--heading{
+            font-size: $font-heading-XS;
+            font-weight: $font-weight-heading-S-XS;
+        }
+    }
+}

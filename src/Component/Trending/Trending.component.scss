@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.trending-container{
+    width: 100%;
+    overflow-x: hidden;
+    @include flex(row,center,center);
+    
+    &__spinner{
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .trending{
+        display: grid;
+        width: 100%;
+        grid-gap:4rem;
+        grid-auto-flow: column;
+        scroll-behavior: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+    .trending::-webkit-scrollbar{
+        display: none;
+    }
+}

@@ -10,7 +10,7 @@ import {
 import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDj4xfDFMddR5H_tPiKdh1csNdcebO_ZWg",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "entertainment-web-app-d25f7.firebaseapp.com",
   projectId: "entertainment-web-app-d25f7",
   storageBucket: "entertainment-web-app-d25f7.appspot.com",
