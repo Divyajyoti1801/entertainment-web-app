@@ -5,8 +5,17 @@ import Tv from "../../assets/icon-category-tv.svg";
 import "./TrendingCard.component.scss";
 
 const TrendingCard = ({ item }) => {
-  const { media_type, release_date, title, adult, backdrop_path } = item;
+  const {
+    media_type,
+    release_date,
+    title,
+    adult,
+    name,
+    backdrop_path,
+    first_air_date,
+  } = item;
   const year = new Date(release_date).getFullYear();
+  const tvYear = new Date(first_air_date).getFullYear();
   const backImage = `https://image.tmdb.org/t/p/w500${backdrop_path}`;
 
   return (
@@ -21,13 +30,15 @@ const TrendingCard = ({ item }) => {
       </div>
       <div className="trending-card__details">
         <h2 className="trending-card__details--title">
-          {year}&nbsp;&#8226;&nbsp;
+          {year ? `${year}` : `${tvYear}`}&nbsp;&#8226;&nbsp;
           <img src={media_type === "movie" ? Movie : Tv} alt="Movie" />
           &nbsp;
           {media_type === "movie" ? `Movie` : `Tv Series`}
           &nbsp;&#8226; &nbsp;{adult ? `A` : `PG`}
         </h2>
-        <h1 className="trending-card__details--heading">{title}</h1>
+        <h1 className="trending-card__details--heading">
+          {title ? `${title}` : `${name}`}
+        </h1>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 
 .trending-card{
-    scroll-snap-align: start;
     width: 47rem;
     height: 23rem;
     padding: 2.4rem;
@@ -9,7 +8,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     @include flex(column,space-between,center);
-
+    &:not(:last-child){
+        margin-right: 4rem;
+    }
     &__bookmark{
         width: 100%;
         @include flex(row,flex-end,center);
@@ -20,11 +21,21 @@
             background: $color-grayish-blue;
             @include flex(row,center,center);
             border-radius: 100%;
+            cursor: pointer;
         }
     }
     
     &__details{
         width: 100%;
         @include flex(column,flex-start,flex-start);
+        &--title{
+            font-size: $font-body-M;
+            font-weight: $font-weight-body-M-S;
+        }
+        &--heading{
+            font-size: $font-heading-M-S;
+            font-weight:$font-weight-heading-S-XS;
+        }
     }
 }
+

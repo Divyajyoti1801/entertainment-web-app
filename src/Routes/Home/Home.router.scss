@@ -4,6 +4,7 @@
     width: 100%;
     height: auto;
     margin-left: 3.6rem;
+    overflow-x: hidden;
     @include flex(column,flex-start,flex-start);
     @include breakpoint($bp-tablet){
         margin-left: 0;
@@ -33,14 +34,34 @@
 
     }
 
+    &__trending-header{
+        font-size: $font-heading-L;
+        font-weight: $font-weight-heading-L-M;
+        margin-bottom: 2.8rem;
+    }
+
     &__recommendation{
         margin-top: 4rem;
         width: 100%;
-        @include flex(row,center,center);
+        @include flex(column,center,flex-start);
+        &--header{
+            font-size: $font-heading-L;
+            font-weight: $font-weight-heading-L-M;
+            margin-bottom: 4rem;
+        }
         &--content{
             width: 100%;
             display: grid;
             grid-template-columns: repeat(4,1fr);
+
+            @include breakpoint($bp-tablet){
+                grid-template-columns: repeat(3,1fr);
+            }
+            
+            @include breakpoint($bp-mobile){
+                grid-template-columns: repeat(2,1fr);
+            }
+
             gap: 4rem;
         }
     }

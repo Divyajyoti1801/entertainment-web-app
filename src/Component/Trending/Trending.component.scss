@@ -4,6 +4,7 @@
     width: 100%;
     overflow-x: hidden;
     @include flex(row,center,center);
+    border-radius:$border-radius ;
     
     &__spinner{
         top:50%;
@@ -12,16 +13,22 @@
     }
 
     .trending{
-        display: grid;
-        width: 100%;
-        grid-gap:4rem;
-        grid-auto-flow: column;
-        scroll-behavior: auto;
-        overscroll-behavior-x: contain;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
+        width: 2040rem;
+        height: 23rem;
+        @include flex(row,center,center);
+        animation: animation 120s linear infinite;
     }
     .trending::-webkit-scrollbar{
         display: none;
     }
+}
+
+@keyframes animation {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-1020rem);
+    }
+    
 }

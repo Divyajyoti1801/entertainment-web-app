@@ -49,8 +49,10 @@ const Home = () => {
           autoComplete="off"
         />
       </div>
+      <h1 className="home__trending-header">Trending</h1>
       <Trending />
       <div className="home__recommendation">
+        <h1 className="home__recommendation--header">Recommended for you</h1>
         {isLoading ? (
           <Spinner />
         ) : (

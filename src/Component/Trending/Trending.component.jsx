@@ -20,6 +20,9 @@ const Trending = () => {
           {trending.map((item) => (
             <TrendingCard key={item.id} item={item} />
           ))}
+          {trending.map((item) => (
+            <TrendingCard key={item.id} item={item} />
+          ))}
         </div>
       )}
     </div>
