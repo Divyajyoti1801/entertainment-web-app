@@ -13,7 +13,6 @@ const Movies = () => {
   const dispatch = useDispatch();
   const movies = useSelector(selectMovies);
   const isMovieLoading = useSelector(selectIsMovieLoading);
-  console.log(movies);
   useEffect(() => {
     dispatch(fetchMoviesAsync());
   }, [dispatch]);

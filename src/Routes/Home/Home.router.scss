@@ -5,7 +5,7 @@
     height: auto;
     margin-left: 3.6rem;
     overflow-x: hidden;
-    @include flex(column,flex-start,flex-start);
+    @include flex(column,center,center);
     @include breakpoint($bp-tablet){
         margin-left: 0;
         margin-top: 3.2rem;
@@ -13,6 +13,7 @@
     
 
     &__trending-header{
+        width: 100%;
         font-size: $font-heading-L;
         font-weight: $font-weight-heading-L-M;
         margin-bottom: 2.8rem;
@@ -21,8 +22,9 @@
     &__recommendation{
         margin-top: 4rem;
         width: 100%;
-        @include flex(column,center,flex-start);
+        @include flex(column,center,center);
         &--header{
+            width: 100%;
             font-size: $font-heading-L;
             font-weight: $font-weight-heading-L-M;
             margin-bottom: 4rem;

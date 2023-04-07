@@ -13,7 +13,6 @@ import "./Home.router.scss";
 const Home = () => {
   const dispatch = useDispatch();
   const trending = useSelector(selectTrending);
-  console.log(trending);
   const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {

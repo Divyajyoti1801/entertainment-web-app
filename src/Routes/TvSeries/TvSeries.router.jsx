@@ -12,7 +12,6 @@ const TvSeries = () => {
   const dispatch = useDispatch();
   const series = useSelector(selectTvSeries);
   const isSeriesLoading = useSelector(selectIsSeriesLoading);
-  console.log(series);
 
   useEffect(() => {
     dispatch(fetchTvAsync());
