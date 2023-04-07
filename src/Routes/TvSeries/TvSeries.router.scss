@@ -4,6 +4,9 @@
     width: 100%;
     @include flex(column,center,center);
     margin-left:3.6rem;
+    @include breakpoint($bp-tablet){
+        margin-left: 0;
+    }
     
     &__heading{
         font-size: $font-heading-L;

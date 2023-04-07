@@ -16,7 +16,7 @@
             width: 100%;
             height: 17.4rem;
             @include breakpoint($bp-small){
-               height: 20rem;
+               height: 24rem;
             }
             border-radius: $border-radius;
         }
