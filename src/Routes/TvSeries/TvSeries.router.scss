@@ -1,1 +1,33 @@
 @import '../../styles/variables';
+
+.series{
+    width: 100%;
+    @include flex(column,center,center);
+    margin-left:3.6rem;
+    
+    &__heading{
+        font-size: $font-heading-L;
+        font-weight: $font-weight-heading-L-M;
+        margin-bottom: 2.4rem;
+        width: 100%;
+    }
+    &__content{
+        width: 100%;
+        display: grid;
+        grid-template-columns:repeat(4,1fr);
+        gap: 4rem;
+        @include breakpoint($bp-tablet){
+            grid-template-columns: repeat(3,1fr);
+        }
+            
+        @include breakpoint($bp-mobile){
+            grid-template-columns: repeat(2,1fr);
+        }
+            
+        @include breakpoint($bp-small){
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+}

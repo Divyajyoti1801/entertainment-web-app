@@ -11,23 +11,31 @@ const Cards = ({ item }) => {
     title,
     adult,
     backdrop_path,
+    poster_path,
     name,
     first_air_date,
   } = item;
   const year = new Date(release_date).getFullYear();
   const tvYear = new Date(first_air_date).getFullYear();
-  const backImage = `https://image.tmdb.org/t/p/w500${backdrop_path}`;
+  const backImage = `https://image.tmdb.org/t/p/w500${
+    backdrop_path ? `${backdrop_path}` : `${poster_path}`
+  }`;
   return (
     <div className="cards">
       <div className="cards__banner">
-        <img src={backImage} alt={`${title}`} className="cards__banner--img" />
+        <img
+          src={backImage}
+          alt={title ? `${title}` : `${name}`}
+          className="cards__banner--img"
+        />
         <span className="cards__banner--icon">
           <img src={BookMarkEmpty} alt="BookMark Empty" />
         </span>
       </div>
       <div className="cards__details">
         <h2 className="cards__details--title">
-          {year ? `${year}` : `${tvYear}`}&nbsp;&#8226;&nbsp;
+          {year ? `${year}` : `${tvYear ? `${tvYear}` : `Yet to release`}`}
+          &nbsp;&#8226;&nbsp;
           <img src={media_type === "movie" ? Movie : Tv} alt="Movie" />
           &nbsp;
           {media_type === "movie" ? `Movie` : `Tv Series`}
