@@ -11,28 +11,6 @@
         margin-top: 3.2rem;
     }
     
-    &__search{
-        width: 100%;
-        margin-bottom: 4rem;
-        @include flex(row,flex-start,center);
-        &--input{
-            padding: 1.8rem 0;
-            width: 100%;
-            margin-left:2.4rem ;
-            background: transparent;
-            border: none;
-            color:$color-white;
-            font-size: $font-heading-M-S;
-            font-weight: $font-weight-heading-L-M;
-            border-bottom: 2px solid transparent;
-
-            &:focus{
-                outline: none;
-                border-bottom-color: $color-grayish-blue;
-            }
-        }
-
-    }
 
     &__trending-header{
         font-size: $font-heading-L;
@@ -53,6 +31,7 @@
             width: 100%;
             display: grid;
             grid-template-columns: repeat(4,1fr);
+            align-items: center;
 
             @include breakpoint($bp-tablet){
                 grid-template-columns: repeat(3,1fr);

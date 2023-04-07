@@ -8,26 +8,25 @@
         flex-direction: column;
     }
 
-    .header{
+    &__header{
         background:$color-semi-dark-blue;
         @include flex(column,space-between,center);
         @include breakpoint($bp-tablet){
             flex-direction: row;
-            width: 100%;
             height: auto;
             padding: 2rem;
         }
         @include breakpoint($bp-tablet){
             padding: 2rem;
         }
-        height: 90vh;
+        height: 92vh;
         padding: 3.2rem;
         border-radius:$border-radius;
-        &__logo{
+        &--logo{
             height: auto;
         }
         
-        &__menu{
+        &--menu{
             @include flex(column,center,center);
             @include breakpoint($bp-tablet){
                 flex-direction: row;
@@ -43,12 +42,38 @@
             }
         }
 
-        &__profile{
+        &--profile{
             &--png{
                 width: 3.8rem;
                 height: 3.8rem;
                 border-radius: 100%;
                 border: 2px solid $color-white;
+            }
+        }
+    }
+
+    &__body{
+        width:90%;
+        &--search{
+            width: 100%;
+            margin-left: 3.6rem;
+            margin-bottom: 4rem;
+            @include flex(row,flex-start,center);
+            &--input{
+                padding: 1.8rem 0;
+                width: 100%;
+                margin-left:2.4rem ;
+                background: transparent;
+                border: none;
+                color:$color-white;
+                font-size: $font-heading-M-S;
+                font-weight: $font-weight-heading-L-M;
+                border-bottom: 2px solid transparent;
+
+                &:focus{
+                    outline: none;
+                    border-bottom-color: $color-grayish-blue;
+                }
             }
         }
     }
