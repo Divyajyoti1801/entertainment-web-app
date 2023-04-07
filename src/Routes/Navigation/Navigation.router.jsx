@@ -33,16 +33,16 @@ const Navigation = () => {
           />
         </div>
         <div className="rootPage__header--menu">
-          <Link className="rootPage__header--menu--item">
+          <Link className="rootPage__header--menu--item" to="/">
             <img src={HomeIcon} alt="Home Icon" />
           </Link>
-          <Link className="rootPage__header--menu--item">
+          <Link className="rootPage__header--menu--item" to="/movie">
             <img src={MovieIcon} alt="Movie Icon" />
           </Link>
-          <Link className="rootPage__header--menu--item">
+          <Link className="rootPage__header--menu--item" to="/tv">
             <img src={TvIcon} alt="TV Series Icon" />
           </Link>
-          <Link className="rootPage__header--menu--item">
+          <Link className="rootPage__header--menu--item" to="/bookmark">
             <img src={BookIcon} alt="Book Icon" />
           </Link>
         </div>

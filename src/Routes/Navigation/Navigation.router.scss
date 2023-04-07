@@ -13,6 +13,7 @@
         @include flex(column,space-between,center);
         @include breakpoint($bp-tablet){
             flex-direction: row;
+            width: 100%;
             height: auto;
             padding: 2rem;
         }
@@ -54,11 +55,18 @@
 
     &__body{
         width:90%;
+        @include breakpoint($bp-tablet){
+            width: 100%;
+        }
         &--search{
             width: 100%;
             margin-left: 3.6rem;
             margin-bottom: 4rem;
             @include flex(row,flex-start,center);
+            @include breakpoint($bp-tablet){
+                margin-left: 0;
+                margin-top: 3.2rem;
+            }
             &--input{
                 padding: 1.8rem 0;
                 width: 100%;

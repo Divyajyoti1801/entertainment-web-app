@@ -3,11 +3,21 @@
 .cards{
     @include flex(column,flex-start,flex-start);
     border-radius:$border-radius;
+    @include breakpoint($bp-small){
+        width: 100%;
+    }
     &__banner{
         position: relative;
+        @include breakpoint($bp-small){
+            width: 100%;
+        }
+
         &--img{
             width: 100%;
             height: 17.4rem;
+            @include breakpoint($bp-small){
+               height: 20rem;
+            }
             border-radius: $border-radius;
         }
         &--icon{
@@ -17,8 +27,9 @@
             border-radius: 100%;
             top:0;
             right: 0;
-            transform: translate(-20%,20%);
+            transform: translate(-30%,30%);
             background: $color-grayish-blue;
+            cursor: pointer;
             @include flex(row,center,center);
         }
     }
