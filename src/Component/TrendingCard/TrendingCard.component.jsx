@@ -1,10 +1,19 @@
 import React from "react";
-import BookMarkEmpty from "../../assets/icon-bookmark-empty.svg";
+import { useDispatch, useSelector } from "react-redux";
+import bookmarkEmpty from "../../assets/icon-bookmark-empty.svg";
+import bookmarkFull from "../../assets/icon-bookmark-full.svg";
 import Movie from "../../assets/icon-category-movie.svg";
 import Tv from "../../assets/icon-category-tv.svg";
+import {
+  AddBookmark,
+  RemoveBookmark,
+} from "../../store/Bookmark/bookmark.action";
+import { selectBookmarks } from "../../store/Bookmark/bookmark.selector";
 import "./TrendingCard.component.scss";
-
 const TrendingCard = ({ item }) => {
+  const dispatch = useDispatch();
+  const bookmarks = useSelector(selectBookmarks);
+
   const {
     media_type,
     release_date,
@@ -14,6 +23,16 @@ const TrendingCard = ({ item }) => {
     backdrop_path,
     first_air_date,
   } = item;
+
+  const isBookmarked = bookmarks.includes(item);
+
+  const onClickHandler = () => {
+    if (isBookmarked) {
+      return dispatch(RemoveBookmark(bookmarks, item));
+    }
+    return dispatch(AddBookmark(bookmarks, item));
+  };
+
   const year = new Date(release_date).getFullYear();
   const tvYear = new Date(first_air_date).getFullYear();
   const backImage = `https://image.tmdb.org/t/p/w500${backdrop_path}`;
@@ -24,8 +43,11 @@ const TrendingCard = ({ item }) => {
       style={{ backgroundImage: `url(${backImage})` }}
     >
       <div className="trending-card__bookmark">
-        <span className="trending-card__bookmark--img">
-          <img src={BookMarkEmpty} alt="BookMark Empty" />
+        <span className="trending-card__bookmark--img" onClick={onClickHandler}>
+          <img
+            src={isBookmarked ? bookmarkFull : bookmarkEmpty}
+            alt={isBookmarked ? "Bookmark Full" : "Bookmark Empty"}
+          />
         </span>
       </div>
       <div className="trending-card__details">

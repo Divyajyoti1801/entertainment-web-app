@@ -1,38 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import BookMarkEmpty from "../../assets/icon-bookmark-empty.svg";
 import BookMarkFull from "../../assets/icon-bookmark-full.svg";
 import Movie from "../../assets/icon-category-movie.svg";
 import Tv from "../../assets/icon-category-tv.svg";
 import {
-  addItemToBookmark,
-  removeItemFromBookmark,
-  toggleBookmark,
+  AddBookmark,
+  RemoveBookmark,
 } from "../../store/Bookmark/bookmark.action";
-import { selectBookmarkItem } from "../../store/Bookmark/bookmark.selector";
+import { selectBookmarks } from "../../store/Bookmark/bookmark.selector";
 
 import "./Cards.component.scss";
 
 const Cards = ({ item }) => {
-  const [bookmark, setBookmark] = useState(false);
-  const bookmarkItems = useSelector(selectBookmarkItem);
-  const dispatch = useDispatch();
-  const onClickHandler = () => setBookmark(!bookmark);
-  if (bookmark) {
-    dispatch(addItemToBookmark(bookmarkItems, item));
-  }
-
+  const bookmarks = useSelector(selectBookmarks);
   const {
-    media_type,
     release_date,
     title,
     adult,
     backdrop_path,
     poster_path,
     name,
-    id,
     first_air_date,
   } = item;
+  const isBookmarked = bookmarks.includes(item);
+  const dispatch = useDispatch();
+
+  const onClickHandler = () => {
+    if (isBookmarked) {
+      return dispatch(RemoveBookmark(bookmarks, item));
+    }
+    return dispatch(AddBookmark(bookmarks, item));
+  };
+
   const year = new Date(release_date).getFullYear();
   const tvYear = new Date(first_air_date).getFullYear();
   const backImage = `https://image.tmdb.org/t/p/w500${
@@ -48,8 +48,8 @@ const Cards = ({ item }) => {
         />
         <span className="cards__banner--icon">
           <img
-            src={bookmark ? BookMarkFull : BookMarkEmpty}
-            alt={bookmark ? "Bookmark Full" : "Bookmark Empty"}
+            src={isBookmarked ? BookMarkFull : BookMarkEmpty}
+            alt={isBookmarked ? "Bookmark Full" : "Bookmark Empty"}
             onClick={onClickHandler}
           />
         </span>
@@ -58,9 +58,9 @@ const Cards = ({ item }) => {
         <h2 className="cards__details--title">
           {year ? `${year}` : `${tvYear ? `${tvYear}` : `Yet to release`}`}
           &nbsp;&#8226;&nbsp;
-          <img src={media_type === "movie" ? Movie : Tv} alt="Movie" />
+          <img src={title ? Movie : Tv} alt="Movie" />
           &nbsp;
-          {media_type === "movie" ? `Movie` : `Tv Series`}
+          {title ? `Movie` : `Tv Series`}
           &nbsp; &#8226; &nbsp;{adult ? `18+` : `PG`}
         </h2>
         <h1 className="cards__details--heading">

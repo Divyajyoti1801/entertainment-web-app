@@ -10,5 +10,5 @@ export const rootReducer = combineReducers({
   trending: trendingReducer,
   movies: moviesReducer,
   series: tvReducer,
-  bookmark: bookmarkReducer,
+  bookmarks: bookmarkReducer,
 });

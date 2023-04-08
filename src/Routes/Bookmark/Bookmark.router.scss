@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.bookmark{
+    width: 100%;
+    @include flex(column,center,center);
+    margin-left: 3.6rem;
+    &__movies-heading{
+        width: 100%;
+        margin-bottom: 4rem;
+        font-size: $font-heading-L;
+        font-weight: $font-weight-heading-L-M;
+    }
+    &__movies{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 4rem;
+        margin-bottom: 4.8rem;
+
+        @include breakpoint($bp-tablet){
+            grid-template-columns: repeat(3,1fr);
+        }
+            
+        @include breakpoint($bp-mobile){
+            grid-template-columns: repeat(2,1fr);
+        }
+            
+        @include breakpoint($bp-small){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__series-heading{
+        width: 100%;
+        margin-bottom: 4rem;
+        font-size: $font-heading-L;
+        font-weight: $font-weight-heading-L-M;
+    }
+
+    &__series{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 4rem;
+
+        @include breakpoint($bp-tablet){
+            grid-template-columns: repeat(3,1fr);
+        }
+            
+        @include breakpoint($bp-mobile){
+            grid-template-columns: repeat(2,1fr);
+        }
+            
+        @include breakpoint($bp-small){
+            grid-template-columns: 1fr;
+        }
+    }
+}

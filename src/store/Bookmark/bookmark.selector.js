@@ -1,8 +1,8 @@
 import { createSelector } from "reselect";
 
-const selectBookmarkReducer = (state) => state.bookmark;
+const selectBookmarkReducer = (state) => state.bookmarks;
 
-export const selectBookmarkItem = createSelector(
+export const selectBookmarks = createSelector(
   [selectBookmarkReducer],
-  (bookmarkData) => bookmarkData.bookmarkItems
+  (bookmarkData) => bookmarkData.bookmarks
 );
