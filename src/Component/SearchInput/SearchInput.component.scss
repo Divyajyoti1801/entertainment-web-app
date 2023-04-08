@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+
+.search{
+    width: 100%;
+    margin-left: 3.6rem;
+    margin-bottom: 4rem;
+    @include flex(row,flex-start,center);
+    @include breakpoint($bp-tablet){
+        margin-left: 0;
+        margin-top: 3.2rem;
+    }
+    &__input{
+        padding: 1.8rem 0;
+        width: 100%;
+        margin-left:2.4rem ;
+        background: transparent;
+        border: none;
+        color:$color-white;
+        font-size: $font-heading-M-S;
+        font-weight: $font-weight-heading-L-M;
+        border-bottom: 2px solid transparent;
+
+        &:focus{
+            outline: none;
+            border-bottom-color: $color-grayish-blue;
+        }
+    }
+}

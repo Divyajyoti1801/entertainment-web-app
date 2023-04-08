@@ -4,6 +4,7 @@ import BookMarkEmpty from "../../assets/icon-bookmark-empty.svg";
 import BookMarkFull from "../../assets/icon-bookmark-full.svg";
 import Movie from "../../assets/icon-category-movie.svg";
 import Tv from "../../assets/icon-category-tv.svg";
+import noImage from "../../assets/no-image-svgrepo-com.svg";
 import {
   AddBookmark,
   RemoveBookmark,
@@ -42,24 +43,23 @@ const Cards = ({ item }) => {
     <div className="cards">
       <div className="cards__banner">
         <img
-          src={backImage}
+          src={backImage ? backImage : noImage}
           alt={title ? `${title}` : `${name}`}
           className="cards__banner--img"
         />
-        <span className="cards__banner--icon">
+        <span className="cards__banner--icon" onClick={onClickHandler}>
           <img
             src={isBookmarked ? BookMarkFull : BookMarkEmpty}
             alt={isBookmarked ? "Bookmark Full" : "Bookmark Empty"}
-            onClick={onClickHandler}
           />
         </span>
       </div>
       <div className="cards__details">
         <h2 className="cards__details--title">
           {year ? `${year}` : `${tvYear ? `${tvYear}` : `Yet to release`}`}
-          &nbsp;&#8226;&nbsp;
+          &nbsp; &#8226; &nbsp;
           <img src={title ? Movie : Tv} alt="Movie" />
-          &nbsp;
+          &nbsp;&nbsp;
           {title ? `Movie` : `Tv Series`}
           &nbsp; &#8226; &nbsp;{adult ? `18+` : `PG`}
         </h2>

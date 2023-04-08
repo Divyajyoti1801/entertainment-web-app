@@ -1,27 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import SearchInput from "../../Component/SearchInput/SearchInput.component";
 import BookIcon from "../../assets/icon-nav-bookmark.svg";
 import HomeIcon from "../../assets/icon-nav-home.svg";
 import MovieIcon from "../../assets/icon-nav-movies.svg";
 import TvIcon from "../../assets/icon-nav-tv-series.svg";
-import searchIcon from "../../assets/icon-search.svg";
 import ProfilePhoto from "../../assets/image-avatar.png";
 import Logo from "../../assets/logo.svg";
 import "./Navigation.router.scss";
 
-const defaultSearchField = {
-  search: "",
-};
-
 const Navigation = () => {
-  const [searchField, setSearchField] = useState(defaultSearchField);
-  const { search } = searchField;
-
-  const onChangeHandler = (event) => {
-    const { name, value } = event.target;
-    setSearchField({ ...searchField, [name]: value });
-  };
-
   return (
     <div className="rootPage">
       <header className="rootPage__header">
@@ -55,21 +43,7 @@ const Navigation = () => {
         </Link>
       </header>
       <div className="rootPage__body">
-        <div className="rootPage__body--search">
-          <img
-            src={searchIcon}
-            alt="Search Icon"
-            className="rootPage__body--search--icon"
-          />
-          <input
-            className="rootPage__body--search--input"
-            placeholder="Search for Movies and TV series"
-            name="search"
-            value={search}
-            onChange={onChangeHandler}
-            autoComplete="off"
-          />
-        </div>
+        <SearchInput />
         <Outlet />
       </div>
     </div>

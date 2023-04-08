@@ -25,9 +25,11 @@ export const getTvSeries = async () => {
   return data;
 };
 
-export const getSearch = async (multi) => {
+export const getSearch = async (query) => {
   const data = await fetch(
-    `https://api.themoviedb.org/3/search/${multi}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=true`
-  ).then((data) => data.json());
+    `https://api.themoviedb.org/3/search/multi?query=${query}&api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1&include_adult=false`
+  )
+    .then((data) => data.json())
+    .then(({ results }) => results);
   return data;
 };
