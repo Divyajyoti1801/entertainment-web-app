@@ -33,6 +33,14 @@
                 flex-direction: row;
             }
             &--item{
+                svg{
+                    transition: $transition;
+                    &:hover,&:active{
+                        path{
+                            fill:$color-white;
+                        }
+                    }
+                }
                 &:not(:last-child){
                     margin-bottom: 4rem;
                     @include breakpoint($bp-tablet){
