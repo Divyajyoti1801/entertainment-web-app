@@ -29,10 +29,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.JPG)
 
 ### Links
-- Live Site URL: [@WatchOnDeck](https://divyajyoti-shows-app.netlify.app/)\
+- Live Site URL: [@WatchOnDeck](https://divyajyoti-shows-app.netlify.app/)
 
 ### Built with
 
